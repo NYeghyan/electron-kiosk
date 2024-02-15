@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import UpdateElectron from '@/components/update';
 import logoVite from './assets/logo-vite.svg';
 import logoElectron from './assets/logo-electron.svg';
 import './App.css';
@@ -18,10 +17,8 @@ function App() {
 
   return (
     <div>
-      {/* Optional: UpdateElectron component can be included if it's part of your UI */}
-      <UpdateElectron />
       <Routes>
-          <Route path="/" element={<Home />} /> {/* Adjusted for root path */}
+          <Route path="/" element={<Home />} /> 
           <Route path="/home" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
       </Routes>

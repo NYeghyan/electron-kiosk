@@ -1,28 +1,32 @@
-import { useEffect, useState } from 'react'
-import UpdateElectron from '@/components/update'
-import logoVite from './assets/logo-vite.svg'
-import logoElectron from './assets/logo-electron.svg'
-import './App.css'
-import { Route, Routes, useNavigate } from 'react-router-dom'
-import { Home } from './Pages/Home/Home'
-import { Menu } from './Pages/Menu/Menu'
-
+import { useEffect } from 'react';
+import UpdateElectron from '@/components/update';
+import logoVite from './assets/logo-vite.svg';
+import logoElectron from './assets/logo-electron.svg';
+import './App.css';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Home } from './Pages/Home/Home';
+import { Menu } from './Pages/Menu/Menu';
 
 function App() {
   const navigate = useNavigate();
   
-    useEffect(() => {
-    if (location.pathname !== "/home") {
-      navigate("home");
+  useEffect(() => {
+    if (window.location.hash !== '#/home' && window.location.hash !== '') {
+      navigate("/home");
     }
-  }, []);
-  return (
-    <Routes>
-        <Route path="/*" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
+  }, [navigate]);
 
-    </Routes>
-  )
+  return (
+    <div>
+      {/* Optional: UpdateElectron component can be included if it's part of your UI */}
+      <UpdateElectron />
+      <Routes>
+          <Route path="/" element={<Home />} /> {/* Adjusted for root path */}
+          <Route path="/home" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;

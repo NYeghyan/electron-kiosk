@@ -5,15 +5,16 @@ import App from "./App";
 import "./index.css";
 
 import "./demos/ipc";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom"; // Change this line
 // If you want use Node.js, the`nodeIntegration` needs to be enabled in the Main process.
 // import './demos/node'
 
+// Use `Router` instead of `BrowserRouter` here
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <Router> {/* Updated to use HashRouter */}
       <App />
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>
 );
 

@@ -4,6 +4,13 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { update } from './update';
 
+
+// Dynamically import the Express server module
+const startServer = async () => {
+  await import("../../server/index.js") as any;
+};
+startServer().catch(console.error);
+
 globalThis.__filename = fileURLToPath(import.meta.url);
 globalThis.__dirname = dirname(__filename);
 

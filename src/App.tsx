@@ -14,7 +14,7 @@ function App() {
     if (window.location.hash !== '#/home' && window.location.hash !== '') {
       navigate("/home");
     }
-  }, [navigate]);
+  }, []);
 
   return (
     <div>

@@ -51,6 +51,8 @@ async function createWindow() {
     icon: join(process.env.VITE_PUBLIC, 'favicon.ico'),
     webPreferences: {
       preload,
+      nodeIntegration: true,
+      contextIsolation: true,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
       // nodeIntegration: true,
 
@@ -58,6 +60,8 @@ async function createWindow() {
       // Read more on https://www.electronjs.org/docs/latest/tutorial/context-isolation
       // contextIsolation: false,
     },
+    fullscreen: true,
+    frame: false,
   })
 
   if (url) { // electron-vite-vue#298

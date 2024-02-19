@@ -1,52 +1,133 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  /* max-width: 1980px; */
+  height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  overflow: hidden;
 }
 
-.logo-box {
+.main-div {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  max-height: 3840px;
+  max-height: 2160px;
+}
+
+
+.main-div-content {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+}
+
+
+.main-div-content-item-list{
+  width: 300px;
+
+}
+
+.main-div-content-pdf{
+  width: 900px;
+}
+
+.main-div-content-pos  {
+  display: flex;
+  width: 1780px;
+}
+
+
+
+
+
+
+
+
+.relative100 {
   position: relative;
-  height: 9em;
+    height: 100%;
 }
 
-.logo {
-  position: absolute;
-  left: calc(50% - 4.5em);
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.overflowHidden {
+  overflow: hidden;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+;
+
+.sdsd {
+  height: 100%;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .logo.electron {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.flex-center {
+.list-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.folder-list {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 10px;
+  overflow-y: scroll;
+  height: 100vh;
+}
+.folder-list-div {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.folder-list-div-name {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.folder-list-ui {
+  width: 100%;
+
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.main-folder-div {
+  max-width: 400px !important;
+  width: 100%;
+}
+.item-list-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 25px;
+}
+
+.pdf-div {
+  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  
+}
+.pdf-iframe {
+  width: 100%;
+
+  height: 100vh;
+}
+
+
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hotpink;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
 }

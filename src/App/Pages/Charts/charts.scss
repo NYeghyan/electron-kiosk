@@ -1,0 +1,106 @@
+
+
+
+
+.chart-div{
+    display: flex;
+    width: 100%;
+}
+
+.chart-div-content {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+
+// #root {
+//     width: 100%;
+//     height: 100vh;
+//     display: flex;
+//   }
+  
+  
+//   .chart-div {
+//     display: flex;
+//     width: 100%;
+//     flex-direction: row;
+//     gap: 25px;
+//     flex: 1 1;
+//   }
+  
+  
+  .chart-div-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+    gap: 25px;
+  }
+  
+  
+  .pos-content-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .my-charte-div {
+    display: flex;
+    height: 500px;
+   
+  }
+  
+  .pos-content-div-os-info {
+    display: flex;
+    align-items: center;
+  
+    justify-content: center;
+  }
+  
+  .my-charte-div-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+  
+  .speed-chart{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  
+  .maxMemory {
+   
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -200px;
+  
+    &.min {
+      color : #67e0e3
+    }
+    &.average {
+      color: #37a2da;
+    }
+    &.max {
+      color : #fd666d
+    }
+  
+    .maxMemory-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+  
+  .line-chart-lable {
+      margin-top: -65px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+  }

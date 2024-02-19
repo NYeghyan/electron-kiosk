@@ -26,13 +26,6 @@ export const  Charts = () =>  {
       osInfoURL: posTwoOsDataURL,
     });
 
-  // const { snapchatData: snapchatDataTwo } =
-  // useGetJava({
-  //   processDataURL: posTwoprocessData,
-
-  // });
-
-  console.log(snapchatDataOne)
 
   return (
     <div className="chart-div">

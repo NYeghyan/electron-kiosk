@@ -2,14 +2,10 @@ import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { release } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { spawn } from 'child_process'; // Added to spawn the Node server as a child process
 import { update } from './update';
-
-
-// Dynamically import the Express server module
-const startServer = async () => {
-  await import("../../server/index.js") as any;
-};
-startServer().catch(console.error);
+// No need for dynamic import; we will spawn the server as a child process.
+// Removed the dynamic import of the server module
 
 globalThis.__filename = fileURLToPath(import.meta.url);
 globalThis.__dirname = dirname(__filename);
@@ -42,8 +38,8 @@ async function createWindow() {
     icon: join(process.env.VITE_PUBLIC, 'favicon.ico'),
     webPreferences: {
       preload,
-      nodeIntegration: false, // Changed for security
-      contextIsolation: true, // Ensuring context isolation is enabled
+      nodeIntegration: false, // Ensure nodeIntegration is false for security
+      contextIsolation: true, // Ensure context isolation is enabled for security
     },
     fullscreen: true,
     frame: false,
@@ -68,7 +64,27 @@ async function createWindow() {
   update(win);
 }
 
-app.whenReady().then(createWindow);
+// Start the Node.js server as a child process
+const startServer = () => {
+  const server = spawn('node', ['../../GitHub/electron-kiosk/server/index.js']); // Adjust path as needed
+  
+  server.stdout.on('data', (data) => {
+    console.log(`Server: ${data}`);
+  });
+
+  server.stderr.on('data', (data) => {
+    console.error(`Server Error: ${data}`);
+  });
+
+  server.on('close', (code) => {
+    console.log(`Server process exited with code ${code}`);
+  });
+};
+
+app.whenReady().then(() => {
+  startServer(); // Start the server when the app is ready
+  createWindow();
+});
 
 app.on('window-all-closed', () => {
   win = null;

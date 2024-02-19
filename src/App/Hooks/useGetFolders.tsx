@@ -8,10 +8,13 @@ import { setFolderState } from "../../Redax/futures/folderSlice";
 const useGetFolders = () => {
   const dispatch = useDispatch();
 
+
+
+
   useEffect(() => {
     // Function to fetch data
     const fetchData = () => {
-      fetch(`http://10.0.121.49:3000/admin/contents?path=/Users/siriusbit/Desktop/GoogleDrive`, {
+      fetch(Link.googleDriveLink, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

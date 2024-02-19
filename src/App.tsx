@@ -22,8 +22,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { useEffect, useRef, useState } from "react";
 import BasicModal from "./App/Modal/Modal";
-import { DraggableDiv } from "./assets/DraggableDiv";
-import useDraggable from "./assets/DragMe";
 import { Charts } from "./App/Pages/Charts/Charts";
 
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({

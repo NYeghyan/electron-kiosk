@@ -63,20 +63,20 @@ function App() {
   //     });
   // };
 
-  useEffect(() => {
-    if (folderData && folderData[0]) {
+  // useEffect(() => {
+  //   if (folderData && folderData[0]) {
 
-      const length = folderData[0].files.length;
-      const pathConst = folderData[0].files[length - 1].filePath;
-      setFilePath(pathConst);
-      handlefileClick(pathConst);
-    }
-  }, [folderData]);
+  //     const length = folderData[0].files.length;
+  //     const pathConst = folderData[0].files[length - 1].filePath;
+  //     setFilePath(pathConst);
+  //     handlefileClick(pathConst);
+  //   }
+  // }, [folderData]);
 
   const handlefileClick = (pathProp: string) => {
 
     if (pathProp === filePath) return;
-    fetch(`http://10.0.121.49:3000/admin/download?path=${pathProp}`, {
+    fetch(`http://localhost:3000/download?path=${pathProp}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -94,25 +94,7 @@ function App() {
       });
   };
 
-  // const handleItemProcesing = () => {
-  //   setOpenModal(true);
-  // };
 
-  // const containerRef = useRef(null);
-  // const boxRef = useRef(null);
-
-  // const attachDraggable = useDraggable(); // Use the custom hook
-
-  // attachDraggable(containerRef, boxRef); // Attach the draggable behavior
-
-  // {openmodal ? (
-  //   <BasicModal
-  //     open={openmodal}
-  //     onClose={(closeModal) => setOpenModal(closeModal)}
-  //     processFile={() => console.log("sds")}
-  //   ></BasicModal>
-  // ) : (
-  //   ""
   // )}
 
   const handleFilename = (name: string) => {

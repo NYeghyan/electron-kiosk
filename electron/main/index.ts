@@ -66,7 +66,8 @@ async function createWindow() {
 
 // Start the Node.js server as a child process
 const startServer = () => {
-  const server = spawn('node', ['../../GitHub/electron-kiosk/server/index.js']); // Adjust path as needed
+  console.log("server")
+  const server = spawn('node', ['./server/index.js']); // Adjust path as needed
   
   server.stdout.on('data', (data) => {
     console.log(`Server: ${data}`);

@@ -23,7 +23,6 @@ export const useGetAllData = (props: IProps) => {
         const data = processData.processes.filter(
           (process: ISingleProcess) => process.Caption === "java.exe"
         )
-        console.log(data)
         if(data.length > 0) {
           setSnapchatData(data)
         } else {

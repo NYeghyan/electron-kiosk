@@ -1,5 +1,7 @@
 export const Link = {
     foldersLinks : "http://localhost:3000/admin/folders",
-    googleDriveLink : "http://10.0.120.150:3000/contents?path=/Users/Unisight/Desktop/RedTop",
+    googleDriveLink : "http://localhost:3000/contents?path=/Users/siriusbit/Desktop/GoogleDrive",
+    ServerLinkMac : "../../GitHub/My Electron app/electron-kiosk/server/index.js",
+    
 }
 

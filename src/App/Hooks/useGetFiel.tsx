@@ -7,7 +7,7 @@ const useGetFiels = (path: string) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(`"admin/${path}"`).then(response => response.json()).then(data => {dispatch(setFileData(data))})
+    fetch(`"${path}"`).then(response => response.json()).then(data => {dispatch(setFileData(data))})
   }, []);
 };
 

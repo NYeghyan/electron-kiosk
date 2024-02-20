@@ -63,15 +63,15 @@ function App() {
   //     });
   // };
 
-  // useEffect(() => {
-  //   if (folderData && folderData[0]) {
+  useEffect(() => {
+    if (folderData && folderData[0]) {
 
-  //     const length = folderData[0].files.length;
-  //     const pathConst = folderData[0].files[length - 1].filePath;
-  //     setFilePath(pathConst);
-  //     handlefileClick(pathConst);
-  //   }
-  // }, [folderData]);
+      const length = folderData[0].files.length;
+      const pathConst = folderData[0].files[length - 1].filePath;
+      setFilePath(pathConst);
+      handlefileClick(pathConst);
+    }
+  }, [folderData]);
 
   const handlefileClick = (pathProp: string) => {
 

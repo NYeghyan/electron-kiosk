@@ -97,7 +97,7 @@ function listFilesInFolder(folderPath) {
 
 // Route to list folders and files
 app.get('/contents', (req, res) => {
-    const directoryPath = req.query.path || '/Users/siriusbit/Desktop/GoogleDrive';
+    const directoryPath = "/Users/AD4/Desktop/GoogleDrive" || '/Users/siriusbit/Desktop/GoogleDrive';
     listFoldersAndFilesRecursively(directoryPath, (error, data) => {
         if (error) {
             res.status(500).json(error);

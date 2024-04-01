@@ -24,7 +24,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.13",
     "@mui/material": "^5.14.13",
-    "@reduxjs/toolkit": "^1.9.7",
+    "@reduxjs/toolkit": "^2.2.3",
     "cors": "^2.8.5",
     "echarts-for-react": "^3.0.2",
     "electron-updater": "^6.1.1",
